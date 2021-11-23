@@ -8,10 +8,15 @@ const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const controller = {
 	index: (req, res) => {
-		res.render("index");
+		res.render("index",{
+			product:products
+		});
+
 	},
 	search: (req, res) => {
-		// Do the magic
+		res.render("result",{
+			product:products
+		})
 	},
 };
 
